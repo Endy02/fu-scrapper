@@ -1,8 +1,9 @@
 from setuptools import setup, find_packages 
 
+
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
-    
+
 VERSION = '0.0.1'
 DESCRIPTION = 'NBA data Scrapper for stats analysis'
 
