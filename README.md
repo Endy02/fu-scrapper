@@ -76,7 +76,7 @@ if __name__ = '__main__':
 
 ### :bookmark: License
 
-Copyright (c) 2021 Fujyn
+Copyright (c) 2021 Fujyn <br>
 Licensed under the <a href="https://github.com/Endy02/fu-scrapper/blob/master/README.md">MIT license</a>.
 
 ---
