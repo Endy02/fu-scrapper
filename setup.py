@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages 
 
 with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
+    long_description = "\n" + fh.read()
     
 VERSION = '0.0.1'
 DESCRIPTION = 'NBA data Scrapper for stats analysis'
@@ -19,7 +19,6 @@ setup(
     description = DESCRIPTION,
     long_description_content_type = 'text/markdown',
     long_description=long_description,
-    packages = find_packages(),
     install_requires = ['pandas','numpy','request','joblib'],
     python_requires = '>=3.7',
     keywords = ['python','sports','data-analysis','csv'],
