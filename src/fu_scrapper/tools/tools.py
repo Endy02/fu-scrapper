@@ -4,7 +4,7 @@ from time import sleep
 
 import pandas as pd
 
-from tools.Scrapper import Scrapper
+from ..tools.Scrapper import Scrapper
 
 
 class Tools():
