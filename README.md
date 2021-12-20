@@ -1,6 +1,6 @@
 # FU-Scrapper
 
-![PyPI](https://img.shields.io/pypi/v/fu-scrapper?label=Version&style=plastic) ![GitHub](https://img.shields.io/github/license/endy02/fu-scrapper?style=plastic) ![GitHub top language](https://img.shields.io/github/languages/top/endy02/fu-scrapper?style=plastic) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/endy02/fu-scrapper?color=%23f16d18&style=plastic)
+![PyPI](https://img.shields.io/pypi/v/fu_scrapper?label=Version&style=plastic) ![GitHub](https://img.shields.io/github/license/endy02/fu-scrapper?style=plastic) ![GitHub top language](https://img.shields.io/github/languages/top/endy02/fu-scrapper?style=plastic) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/endy02/fu-scrapper?color=%23f16d18&style=plastic)
 
 ---
 > This package allow you to get data in csv format optimized for data analysis
