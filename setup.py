@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '1.2'
+VERSION = '1.0.0'
 DESCRIPTION = 'NBA data Scrapper for stats analysis'
 
 # Setting up the package
@@ -20,7 +20,7 @@ setup(
     description = DESCRIPTION,
     long_description_content_type = 'text/markdown',
     long_description=long_description,
-    install_requires = ['pandas','numpy','request','joblib'],
+    install_requires = ['pandas','numpy','requests','joblib'],
     python_requires = '>=3.7',
     keywords = ['python','sports','data-analysis','csv'],
     classifiers = [
@@ -32,6 +32,6 @@ setup(
         "Operating System :: MacOS :: MacOS X",
         "Operating System :: Microsoft :: Windows",
     ],
-    package_dir={"": "fu-scrapper"},
-    packages=find_packages(where="fu-scrapper"),
+    package_dir={"": "fu_scrapper"},
+    packages=find_packages(where="fu_scrapper"),
 )
