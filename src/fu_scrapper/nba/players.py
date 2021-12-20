@@ -9,7 +9,7 @@ class Players():
     def __init__(self, url):
         self.tools = Tools(url)
         self.data_url = url
-    
+
     def export_players(self):
         """
             Export players informations and global stats
