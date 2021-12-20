@@ -6,10 +6,10 @@ from tools.tools import Tools
 
 
 class Players():
-    def __init__(self):
-        self.tools = Tools()
-        self.data_url = os.path.dirname(os.path.abspath(__file__)) + '/data/'
-    
+    def __init__(self, url):
+        self.tools = Tools(url)
+        self.data_url = url
+
     def export_players(self):
         """
             Export players informations and global stats

@@ -8,8 +8,8 @@ from ..tools.Scrapper import Scrapper
 
 
 class Tools():
-    def __init__(self):
-        self.data_url = os.path.dirname(os.path.abspath(__file__)) + '/data/'
+    def __init__(self, url):
+        self.data_url = url
         self.scrapper = Scrapper(max_call_errors=6)
         
     def get_data(self, url, datasets_name):

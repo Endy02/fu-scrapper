@@ -12,9 +12,9 @@ class Games():
     """
         Games class to get all NBA stats and ranking
     """
-    def __init__(self):
-        self.tools = Tools()
-        self.data_url = os.path.dirname(os.path.abspath(__file__)) + '/data/'
+    def __init__(self, url):
+        self.tools = Tools(url)
+        self.data_url = url
         
     def next_week_games(self):
         """
