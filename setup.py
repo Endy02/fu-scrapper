@@ -32,6 +32,6 @@ setup(
         "Operating System :: MacOS :: MacOS X",
         "Operating System :: Microsoft :: Windows",
     ],
-    package_dir={"": "fu_scrapper"},
-    packages=find_packages(where="fu_scrapper"),
+    package_dir={"": "src"},
+    packages=find_packages(where="src"),
 )
