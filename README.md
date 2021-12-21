@@ -45,15 +45,20 @@ Initialize the source that you need and use the functions provided by the packag
 # in our case it's nba
 from fu-scrapper.nba.players import Players
 from fu-scrapper.nba.teams import Teams
+# import os package
+import os
+
+# Initialize url variable
+url = os.path.dirname(os.path.abspath(__file__)) + "/target_folder/"
 
 if __name__ = '__main__':
-    # Player class instantiation
-    players = Players()
+    # Player class instantiation with url parameter
+    players = Players(url=url)
     # All players general stats into csv file
     players.extract_players()
 
-    # team class instantiation
-    teams = Teams()
+    # team class instantiation with url parameter
+    teams = Teams(url=url)
     # All teams total stats into csv file
     teams.extract_teams_details()
 ```
@@ -62,17 +67,26 @@ if __name__ = '__main__':
 
 ### Functions
 
-> <b>NBA Api</b>
+<b>NBA Api :</b>
 
-| function | descritpion |
-| --- | --- |
-| ``` players.extract_players() ``` | Extract all players informations and global stats for the current season into a csv file |
-| ``` teams.extract_teams() ``` |  Extract all teams informations and global stats for the current season into a csv file |
-| ``` teams.extract_teams_details() ``` | Extract all teams details by games |
-| ``` games.next_week_games() ``` | Get informations of all next week games into csv file |
-| ``` games.last_week_games() ``` | Get all last week game details |
-| ``` games.today_games() ``` | Get listing of today games into csv file |
-| ``` games.new_games() ``` | Get all new game stats and ranking into a csv file |
+>#### Players
+>| function | descritpion |
+>| --- | --- |
+>| ``` players.extract_players() ``` | Extract all players >informations and global stats for the current season into a csv >file |
+
+> #### Teams
+>| function | descritpion |
+>| --- | --- |
+>| ``` teams.extract_teams() ``` |  Extract all teams >informations and global stats for the current season into a csv >file |
+>| ``` teams.extract_teams_details() ``` | Extract all teams >details by games |
+
+> #### Games
+>| function | descritpion |
+>| --- | --- |
+>| ``` games.next_week_games() ``` | Get informations of all next >week games into csv file |
+>| ``` games.last_week_games() ``` | Get all last week game >details |
+>| ``` games.today_games() ``` | Get listing of today games into >csv file |
+>| ``` games.new_games() ``` | Get all new game stats and ranking >into a csv file |
 
 ---
 
