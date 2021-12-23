@@ -2,7 +2,7 @@ import os
 from time import time
 
 import pandas as pd
-from tools.tools import Tools
+from ..tools.tools import Tools
 
 
 class Players():
