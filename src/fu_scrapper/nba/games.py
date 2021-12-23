@@ -4,8 +4,8 @@ from time import sleep, time
 
 import joblib
 import pandas as pd
-from tools.preformator import Preformator
-from tools.tools import Tools
+from ..tools.preformator import Preformator
+from ..tools.tools import Tools
 
 
 class Games():
