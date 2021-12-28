@@ -200,26 +200,29 @@ class Games():
             dfs_details.append(df)
 
             joblib.dump(dfs_details, save_details_path)
+            
+        if dfs_details is None:
+            new_games_details = pd.concat(dfs_details)
 
-        new_games_details = pd.concat(dfs_details)
+            # Merge old and new dataframe
+            print('Merging old and new datasets')
+            ranking = self.tools.merge_news_old(new_ranking, old_ranking)
+            games = self.tools.merge_news_old(new_games, old_games)
+            games_details = self.tools.merge_news_old(new_games_details, old_games_details)
 
-        # Merge old and new dataframe
-        print('Merging old and new datasets')
-        ranking = self.tools.merge_news_old(new_ranking, old_ranking)
-        games = self.tools.merge_news_old(new_games, old_games)
-        games_details = self.tools.merge_news_old(new_games_details, old_games_details)
+            games['GAME_ID'] = pd.to_numeric(games['GAME_ID'])
+            games['GAME_DATE_EST'] = pd.to_datetime(games['GAME_DATE_EST'])
+            games_details['GAME_ID'] = pd.to_numeric(games_details['GAME_ID'])
+            ranking['STANDINGSDATE'] = pd.to_datetime(ranking['STANDINGSDATE'])
 
-        games['GAME_ID'] = pd.to_numeric(games['GAME_ID'])
-        games['GAME_DATE_EST'] = pd.to_datetime(games['GAME_DATE_EST'])
-        games_details['GAME_ID'] = pd.to_numeric(games_details['GAME_ID'])
-        ranking['STANDINGSDATE'] = pd.to_datetime(ranking['STANDINGSDATE'])
-
-        # Save merge datasets
-        print('Save new datasets to csv into ', self.data_url)
-        today = self.tools.get_date(0)
-        games.to_csv(self.data_url + 'games.csv', index=False)
-        games_details.to_csv(self.data_url + 'games_details.csv', index=False)
-        ranking.to_csv(self.data_url + 'ranking.csv', index=False)
+            # Save merge datasets
+            print('Save new datasets to csv into ', self.data_url)
+            today = self.tools.get_date(0)
+            games.to_csv(self.data_url + 'games.csv', index=False)
+            games_details.to_csv(self.data_url + 'games_details.csv', index=False)
+            ranking.to_csv(self.data_url + 'ranking.csv', index=False)
+        else:
+            print("Games and Ranking already up to date")
 
         print('Delete tmp saved files')
         os.remove(save_path)
