@@ -201,7 +201,7 @@ class Games():
 
             joblib.dump(dfs_details, save_details_path)
             
-        if dfs_details is None:
+        if dfs_details is not None:
             new_games_details = pd.concat(dfs_details)
 
             # Merge old and new dataframe
@@ -221,13 +221,14 @@ class Games():
             games.to_csv(self.data_url + 'games.csv', index=False)
             games_details.to_csv(self.data_url + 'games_details.csv', index=False)
             ranking.to_csv(self.data_url + 'ranking.csv', index=False)
+        
+            print('Delete tmp saved files')
+            os.remove(save_path)
+            os.remove(save_details_path)
         else:
             print("Games and Ranking already up to date")
-
-        print('Delete tmp saved files')
-        os.remove(save_path)
-        os.remove(save_details_path)
-        
+            os.remove(save_path)
+    
     def __get_game_detail(self, game_id):
         """
             Get game details
